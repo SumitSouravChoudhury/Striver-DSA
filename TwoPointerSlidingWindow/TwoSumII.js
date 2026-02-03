@@ -1,21 +1,18 @@
 function twoSum(arr, target) {
-  let sum = arr[0],
-    start = 0;
+  let l = 0,
+    r = arr.length - 1;
 
-  for (let i = 1; i < arr.length - 1; i++) {
-    while (sum > target) {
-      sum -= arr[start];
-      start++;
+  while (l < r) {
+    if (arr[l] + arr[r] === target) {
+      return [l + 1, r + 1];
+    } else if (arr[l] + arr[r] > target) {
+      r--;
+    } else {
+      l++;
     }
-
-    if (sum === target) {
-      return [start, i - 1];
-    }
-
-    sum += arr[i];
   }
 }
 
 const arr = [2, 3, 4, 8, 11, 13, 17];
 
-console.log(twoSum(arr, 16));
+console.log(twoSum(arr, 15));
