@@ -14,7 +14,7 @@ const getDetails = function (city, country) {
       " " +
       city +
       "," +
-      country
+      country,
   );
 };
 
