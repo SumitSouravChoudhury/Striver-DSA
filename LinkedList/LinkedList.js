@@ -210,6 +210,8 @@ MyLinkedList.prototype.isPalindrome = function (head) {
     if (fList.val !== sList.val) {
       return false;
     }
+    fList = fList.next;
+    sList = sList.next;
   }
 
   return true;
@@ -418,7 +420,7 @@ MyLinkedList.prototype.rotateKTimes = function (head, k) {
 
   let newHead = s.next;
   s.next = null;
-  f.nex = head;
+  f.next = head;
 
   return newHead;
 };
