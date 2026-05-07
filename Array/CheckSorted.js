@@ -1,6 +1,6 @@
-const arr = [3, 1, -9, 8, 7, 22, 5, 0];
+const arr = [4, 5, 6, 7, 8];
 
-function isSorted(arr) {
+const isSorted = (arr) => {
   for (let i = 0; i < arr.length - 1; i++) {
     if (arr[i] > arr[i + 1]) {
       return false;
@@ -8,6 +8,6 @@ function isSorted(arr) {
   }
 
   return true;
-}
+};
 
 console.log(isSorted(arr));

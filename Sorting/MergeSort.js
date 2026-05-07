@@ -1,7 +1,7 @@
 const arr = [3, 1, -9, 8, 7, 22, 5, 0];
 const temp = new Array(arr.length);
 
-function merge(arr, temp, low, mid, high) {
+const merge = (arr, temp, low, mid, high) => {
   let i = low,
     j = mid + 1,
     k = low;
@@ -24,11 +24,11 @@ function merge(arr, temp, low, mid, high) {
   for (let x = low; x <= high; x++) {
     arr[x] = temp[x];
   }
-}
+};
 
-function mergeSort(arr, temp, low, high) {
+const mergeSort = (arr, temp, low, high) => {
   if (low < high) {
-    let mid = Math.floor(low + (high - low) / 2);
+    let mid = low + Math.floor((high - low) / 2);
 
     mergeSort(arr, temp, low, mid);
     mergeSort(arr, temp, mid + 1, high);
@@ -37,6 +37,6 @@ function mergeSort(arr, temp, low, high) {
   }
 
   return arr;
-}
+};
 
 console.log(mergeSort(arr, temp, 0, arr.length - 1));

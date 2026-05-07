@@ -1,6 +1,6 @@
 const arr = [3, 1, -9, 8, 7, 22, 5, 0];
 
-function insertionSort(arr) {
+const insertionSort = (arr) => {
   for (let i = 1; i < arr.length; i++) {
     let k = arr[i];
     let j = i - 1;
@@ -14,6 +14,6 @@ function insertionSort(arr) {
   }
 
   return arr;
-}
+};
 
 console.log(insertionSort(arr));

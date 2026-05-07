@@ -1,6 +1,6 @@
 const arr = [3, 1, -9, 8, 7, 22, 5, 0];
 
-function selectionSort(arr) {
+const selectionSort = (arr) => {
   for (let i = 0; i < arr.length - 1; i++) {
     let min = i;
 
@@ -10,12 +10,14 @@ function selectionSort(arr) {
       }
     }
 
-    let temp = arr[min];
-    arr[min] = arr[i];
-    arr[i] = temp;
+    if (min !== i) {
+      let temp = arr[i];
+      arr[i] = arr[min];
+      arr[min] = temp;
+    }
   }
 
   return arr;
-}
+};
 
 console.log(selectionSort(arr));

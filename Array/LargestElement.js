@@ -1,15 +1,15 @@
-const arr = [3, 1, -9, 8, 7, 22, 5, 0];
+const arr = [8, 10, 5, 7, 9];
 
-function largestElement(arr) {
-  let max = -Infinity;
+const largestElement = (arr) => {
+  let maxEle = -Infinity;
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
+    if (arr[i] > maxEle) {
+      maxEle = arr[i];
     }
   }
 
-  return max;
-}
+  return maxEle;
+};
 
 console.log(largestElement(arr));

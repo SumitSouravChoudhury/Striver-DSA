@@ -1,6 +1,6 @@
 const arr = [3, 1, -9, 8, 7, 22, 5, 0];
 
-function partition(arr, low, high) {
+const partition = (arr, low, high) => {
   let pivot = arr[high];
   let i = low - 1;
 
@@ -8,20 +8,16 @@ function partition(arr, low, high) {
     if (arr[j] < pivot) {
       i++;
 
-      let temp = arr[i];
-      arr[i] = arr[j];
-      arr[j] = temp;
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
   }
 
-  let temp = arr[i + 1];
-  arr[i + 1] = arr[high];
-  arr[high] = temp;
+  [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
 
   return i + 1;
-}
+};
 
-function quickSort(arr, low, high) {
+const quickSort = (arr, low, high) => {
   if (low < high) {
     let pi = partition(arr, low, high);
 
@@ -30,6 +26,6 @@ function quickSort(arr, low, high) {
   }
 
   return arr;
-}
+};
 
 console.log(quickSort(arr, 0, arr.length - 1));

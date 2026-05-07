@@ -1,40 +1,20 @@
-const arr = [3, 1, -9, 8, 7, 22, 5, 0];
+const arr = [8, 10, 5, 7, 9];
 
-// function secondLargest(arr) {
-//   if (arr.length < 2) {
-//     return null;
-//   }
-
-//   let largest = -Infinity,
-//     secLargest = -Infinity;
-
-//   for (let i = 0; i < arr.length; i++) {
-//     if (arr[i] > largest) {
-//       secLargest = largest;
-//       largest = arr[i];
-//     } else if (arr[i] > secLargest && arr[i] < largest) {
-//       secLargest = arr[i];
-//     }
-//   }
-
-//   return secLargest;
-// }
-
-function secondLargest(arr) {
-
-  let largest = -Infinity, secLargest = -Infinity
+const secondLargestElement = (arr) => {
+  let largest = -Infinity,
+    secondLargest = -Infinity;
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > largest) {
+      secondLargest = largest;
       largest = arr[i];
     }
-
-    if (arr[i] > secLargest && arr[i] < largest) {
-      secLargest = arr[i];
+    if (arr[i] > secondLargest && arr[i] !== largest) {
+      secondLargest = arr[i];
     }
   }
 
-  return secLargest
-}
+  return secondLargest;
+};
 
-console.log(secondLargest(arr));
+console.log(secondLargestElement(arr));
