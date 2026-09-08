@@ -6,17 +6,15 @@ const longestSubarray = (arr) => {
   let sum = 0,
     max = 0;
 
+  map.set(0, -1);
+
   for (let i = 0; i < arr.length; i++) {
     sum += arr[i];
 
-    if (sum === 0) {
-      max = i + 1;
+    if (map.has(sum)) {
+      max = Math.max(max, i - map.get(sum));
     } else {
-      if (map.has(sum)) {
-        max = Math.max(max, i - map.get(sum));
-      } else {
-        map.set(sum, i);
-      }
+      map.set(sum, i);
     }
   }
 
