@@ -1,7 +1,7 @@
 const arr = [2, 6, 5, 8, 11];
 let target = 14;
 
-const twoSum = (arr) => {
+const twoSum = (arr, target) => {
   const map = new Map();
 
   for (let i = 0; i < arr.length; i++) {
@@ -14,4 +14,4 @@ const twoSum = (arr) => {
   return [];
 };
 
-console.log(twoSum(arr));
+console.log(twoSum(arr, target));

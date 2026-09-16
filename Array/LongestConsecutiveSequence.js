@@ -1,29 +1,24 @@
 const arr = [100, 4, 200, 1, 3, 2];
 
 const longestConsecutiveSequence = (arr) => {
-  let maxLen = -Infinity;
+  const set = new Set(arr);
+  let maxCount = 0;
 
-  const set = new Set();
+  for (const num of set) {
+    if (!set.has(num - 1)) {
+      let current = num;
+      let count = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    set.add(arr[i]);
-  }
-
-  for (let i = 0; i < arr.length; i++) {
-    if (!set.has(arr[i] - 1)) {
-      let j = arr[i];
-      let currLen = 0;
-
-      while (set.has(j)) {
-        currLen++;
-        j++;
+      while (set.has(current)) {
+        count++;
+        current++;
       }
 
-      maxLen = Math.max(maxLen, currLen);
+      maxCount = Math.max(maxCount, count);
     }
   }
 
-  return maxLen;
+  return maxCount;
 };
 
 console.log(longestConsecutiveSequence(arr));
