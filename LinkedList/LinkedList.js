@@ -439,7 +439,7 @@ MyLinkedList.prototype.swapPair = function (head) {
 
   while (c !== null && n !== null) {
     p.next = n;
-    curr.next = n.next;
+    c.next = n.next;
     n.next = c;
 
     p = c;
